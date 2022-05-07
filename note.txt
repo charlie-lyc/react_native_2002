@@ -7,7 +7,6 @@
         : FlatList, SectionList
     - iOS
         : ActionSheetIOS, AlertIOS, etc
-        
     - Android
         : BackHandler, DatePickerAndroid, etc
 
