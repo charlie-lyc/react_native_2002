@@ -1,0 +1,85 @@
+* Built-in Components
+    - Basic Components 
+        : View, Text, Image, TextInput, ScrollView, StyleSheet
+    - UI
+        : Button, Picker, Slider, Switch
+    - List Views
+        : FlatList, SectionList
+    - iOS
+        : ActionSheetIOS, AlertIOS, etc
+        
+    - Android
+        : BackHandler, DatePickerAndroid, etc
+
+--------------------------------------------------------------
+* Setting up the development environment
+(https://reactnative.dev/docs/environment-setup)
+
+    - XCode
+        - Preferences - Locations - 'Command Line Tools'
+        - Open a simulator(on terminal)
+            : $ open -a simulator
+        - Install CocoaPods(on terminal)
+            : $ sudo gem install cocoapods
+
+    - Android Studio
+        - Software Development Kit(SDK) Manager - SDK Platform - 'Android 11(R) <API Level 30>' - 'Show Package Details'
+            : Check 'Android SDK Platform 30', 'Intel x86 Atom_64 System Image' or 'Google APIs Intel x86 Atom System Image'
+        - Software Development Kit(SDK) Manager - SDK Tools - 'Android SDK Build-Tools'
+            : Check '30.0.2'
+        - Android Virtual Device(AVD) Managers
+            : Create 'API 30' device
+    - Configure the ANDROID_SDK_ROOT environment variable :
+        $ export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+        $ export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+        $ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
+--------------------------------------------------------------
+Create project with React Native CLI (without Expo)
+
+$ npm i -g react-native-cli
+$ react-native init ShoppingList
+
+...
+  Run instructions for Android:
+    • Have an Android emulator running (quickest way to get started), or a device connected.
+    • cd "/Users/charlie/Documents/YouTube/BradTraversy/react_native_2002/ShoppingList" && npx react-native run-android
+  
+  Run instructions for iOS:
+    • cd "/Users/charlie/Documents/YouTube/BradTraversy/react_native_2002/ShoppingList" && npx react-native run-ios
+    - or -
+    • Open ShoppingList/ios/ShoppingList.xcworkspace in Xcode or run "xed -b ios"
+    • Hit the Run button
+    
+  Run instructions for macOS:
+    • See https://aka.ms/ReactNativeGuideMacOS for the latest up-to-date instructions.
+...
+
+--------------------------------------------------------------
+Run project
+$ cd ShoppingList 
+$ react-native run-ios
+($ react-native run-android)
+
+Open App.js and fix code
+$ code App.js
+
+Make folder and components
+$ mkdir components
+
+--------------------------------------------------------------
+Install packages
+$ npm i react-native-uuid
+$ npm i react-native-vector-icons 
+
+Link react-native-vector-icons to iOS and Android Module
+    - React Native <= 0.59
+        : $ react-native link react-native-vector-icons
+
+    - React Native >= 0.60
+        - iOS
+            - Copy 'node_modules/react-native-vector-icons/Fonts/' folder
+            - Paste into 'ios/' folder
+            - Recompile, Rebuild
+        - Android
+            - Nothing needed
